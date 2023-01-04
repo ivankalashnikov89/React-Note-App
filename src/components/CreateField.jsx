@@ -4,11 +4,13 @@ import Zoom from '@mui/material/Zoom';
 
 export default function CreateField(props) {
 
+    //the const that keeps track of the title and content
     const[note,setNote] = useState({
         title:"",
         content:""
     })
 
+    //function that is going to receive an event when it get triggered
     function handleChange(event) {
         const {name, value} = event.target;
 
@@ -20,12 +22,17 @@ export default function CreateField(props) {
         });
     }
 
+    /*the note gets added over to our App.js 
+    and we set the note state to both an empty title 
+    and an empty content */
     function submitNote(event) {
         props.noteAdd(note);
         setNote({
             title:"",
             content:""
         });
+
+        //preventing entire reloading the page
         event.preventDefault();
     }
 

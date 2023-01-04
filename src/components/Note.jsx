@@ -4,6 +4,8 @@ import RestoreFromTrashIcon from '@mui/icons-material/RestoreFromTrash';
 export default function Note(props) {
 
 function handleClick() {
+
+    //callback from Note component to trigger the delete function
     props.onDelete(props.id);
 }
 

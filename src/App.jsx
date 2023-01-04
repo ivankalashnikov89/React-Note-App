@@ -15,6 +15,7 @@ export default function App() {
 
     }
 
+    //function to filter out the item that needs deletion
     function deleteNote(id) {
         setNotes((prevValue) => {
             return prevValue.filter((noteItem,index) => {
@@ -27,6 +28,8 @@ export default function App() {
         <div>
             <Header />
             <CreateField noteAdd={addNote} />
+
+            {/*the map function to loop through the notes array*/}
             {notes.map((noteItem, index) => {
             return (
              <Note key={index}
